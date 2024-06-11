@@ -196,8 +196,9 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o42vp"]
-size = Vector2(0.75, 0.875)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6sxg7"]
+radius = 0.34375
+height = 0.875
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ty6et")
@@ -205,9 +206,9 @@ script = ExtResource("1_ty6et")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_xndvy")
-animation = &"fall"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 scale = Vector2(32, 32)
-shape = SubResource("RectangleShape2D_o42vp")
+shape = SubResource("CapsuleShape2D_6sxg7")
