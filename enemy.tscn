@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [gd_scene load_steps=4 format=3 uid="uid://cyfa7ypxguv82"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_q2vwf"]
@@ -21,14 +22,20 @@ shape = SubResource("CircleShape2D_d6315")
 path_postprocessing = 1
 =======
 [gd_scene load_steps=2 format=3 uid="uid://cyfa7ypxguv82"]
+=======
+[gd_scene format=3 uid="uid://cyfa7ypxguv82"]
+>>>>>>> e45f5c3 (Added script for enemy scene)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkapv"]
+[node name="Enemy" type="CharacterBody2D"]
 
-[node name="Enemy" type="Node2D"]
-position = Vector2(40, 16)
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
+<<<<<<< HEAD
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_vkapv")
 >>>>>>> dc48dbe (Created enemy scene)
+=======
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+>>>>>>> e45f5c3 (Added script for enemy scene)

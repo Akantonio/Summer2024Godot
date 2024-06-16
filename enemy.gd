@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #enemy.gd
 extends CharacterBody2D
 
@@ -28,4 +29,15 @@ func _physics_process(_delta):
 		return
 	navigation_agent.target_position = target_to_chase.global_position
 	velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * SPEED
+=======
+extends CharacterBody2D
+
+@onready var navigation_region = $NavigationRegion2D
+
+const SPEED = 300.0
+
+
+func _physics_process(delta):
+
+>>>>>>> e45f5c3 (Added script for enemy scene)
 	move_and_slide()
