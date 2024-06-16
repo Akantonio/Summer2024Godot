@@ -1,11 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyfa7ypxguv82"]
+[gd_scene format=3 uid="uid://cyfa7ypxguv82"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkapv"]
+[node name="Enemy" type="CharacterBody2D"]
 
-[node name="Enemy" type="Node2D"]
-position = Vector2(40, 16)
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("RectangleShape2D_vkapv")
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
