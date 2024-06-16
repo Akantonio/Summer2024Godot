@@ -1,9 +1,18 @@
-[gd_scene format=3 uid="uid://cyfa7ypxguv82"]
+[gd_scene load_steps=4 format=3 uid="uid://cyfa7ypxguv82"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_q2vwf"]
+[ext_resource type="Texture2D" uid="uid://cb6012eu2tmaa" path="res://enemyResources/saw.png" id="2_u52w1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d6315"]
+radius = 20.0
 
 [node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_q2vwf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_u52w1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d6315")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
