@@ -43,9 +43,13 @@ position = Vector2(941, 558)
 =======
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("1_tiilm")]
-position = Vector2(146, 282)
+position = Vector2(74, 79)
 target_to_chase = NodePath("../testPlayer")
 
 [node name="testPlayer" parent="." instance=ExtResource("2_ojvaf")]
+<<<<<<< HEAD
 position = Vector2(185, 502)
 >>>>>>> 4e36494 (working test for enemy)
+=======
+position = Vector2(941, 558)
+>>>>>>> b5f5ca4 (position of characters)
