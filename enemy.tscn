@@ -33,6 +33,7 @@ path_postprocessing = 1
 >>>>>>> 8babb11 (Saved enemy scene file)
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_q2vwf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -42,9 +43,14 @@ texture = ExtResource("2_u52w1")
 shape = SubResource("CircleShape2D_d6315")
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_vkapv")
 >>>>>>> dc48dbe (Created enemy scene)
 =======
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 >>>>>>> e45f5c3 (Added script for enemy scene)
+=======
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+>>>>>>> b9241d2 (fixed bug when enemy reaches test_player)

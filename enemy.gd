@@ -51,9 +51,15 @@ func wait_for_physics():
 
 func _physics_process(delta):
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 >>>>>>> e45f5c3 (Added script for enemy scene)
 =======
+=======
+	if navigation_agent.is_navigation_finished() and\
+						 target_to_chase.global_position == navigation_agent.target_position:
+		return
+>>>>>>> b9241d2 (fixed bug when enemy reaches test_player)
 	navigation_agent.target_position = target_to_chase.global_position
 	velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * SPEED
 >>>>>>> 546c52e (Fixed jittering bug)
