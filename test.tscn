@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceacw8luev2lf"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_6txnl"]
+[ext_resource type="PackedScene" uid="uid://bvwiuai8lgww0" path="res://player.tscn" id="1_kc4k1"]
+[ext_resource type="PackedScene" uid="uid://cqo7vjp5msa2u" path="res://gui/heartsContainer.tscn" id="3_4hstq"]
+
+[node name="Test" type="Node2D"]
+script = ExtResource("1_6txnl")
+
+[node name="Player" parent="." instance=ExtResource("1_kc4k1")]
+position = Vector2(99, 37)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("3_4hstq")]
