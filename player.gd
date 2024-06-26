@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -400.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+@export var maxHealth = 5
+@onready var currentHealth: int = maxHealth
 
 func _physics_process(delta):
 	#animations
@@ -35,3 +37,10 @@ func _physics_process(delta):
 	move_and_slide()
 	var isLeft = velocity.x < 0
 	$Sprite2D.flip_h = isLeft
+
+func _on_hurt_box_area_entered(area):
+	if area.name == "hitBox":
+		currentHealth -= 1
+		if currentHealth == 0:
+			currentHealth = maxHealth
+		print_debug(currentHealth); 

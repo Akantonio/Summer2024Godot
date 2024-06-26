@@ -206,7 +206,8 @@ script = ExtResource("1_ty6et")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_xndvy")
-animation = &"run"
+animation = &"fall"
+frame_progress = 0.426613
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
