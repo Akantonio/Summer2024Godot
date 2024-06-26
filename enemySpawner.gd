@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #enemy_spawner.gd
 extends Node2D
 
@@ -5,6 +6,10 @@ extends Node2D
 
 #enemystats
 
+=======
+extends Node2D
+
+>>>>>>> 0c5e75c (Added Spawner Enemy)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
