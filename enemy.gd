@@ -1,8 +1,12 @@
+#enemy.gd
 extends CharacterBody2D
 
-
+#node reference
 @onready var navigation_agent = $NavigationAgent2D
 @export var target_to_chase: CharacterBody2D
+
+#signal name(param,param)
+signal on_hit_signal
 
 #default speed was 300
 const SPEED = 180.0
