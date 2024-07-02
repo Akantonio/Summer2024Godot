@@ -1,4 +1,9 @@
+#enemy_spawner.gd
 extends Node2D
+
+#node reference
+
+#enemystats
 
 
 # Called when the node enters the scene tree for the first time.
