@@ -46,3 +46,5 @@ func _on_hurt_box_area_entered(area):
 			currentHealth = maxHealth
 		
 		healthChanged.emit(currentHealth)
+		print_debug(currentHealth); 
+

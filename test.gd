@@ -13,6 +13,8 @@ func _ready():
 	heartsContainer.updateHearts(player.currentHealth)
 	#Here we connect the signal from the player saying we updated health
 	player.healthChanged.connect(heartsContainer.updateHearts)
+	heartsContainer.setMaxHearts(player.maxHealth)
+	heartsContainer.updateHearts(1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
