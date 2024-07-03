@@ -24,6 +24,7 @@ func wait_for_physics():
 func _physics_process(delta):
 	if navigation_agent.is_navigation_finished() and\
 						 target_to_chase.global_position == navigation_agent.target_position:
+		on_hit_signal.emit()
 		return
 	navigation_agent.target_position = target_to_chase.global_position
 	velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * SPEED
