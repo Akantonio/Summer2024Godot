@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+signal healthChanged
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -43,4 +44,7 @@ func _on_hurt_box_area_entered(area):
 		currentHealth -= 1
 		if currentHealth == 0:
 			currentHealth = maxHealth
+		
+		healthChanged.emit(currentHealth)
 		print_debug(currentHealth); 
+
