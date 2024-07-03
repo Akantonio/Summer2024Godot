@@ -21,7 +21,7 @@ func wait_for_physics():
 	set_physics_process(true)
 	
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if navigation_agent.is_navigation_finished() and\
 						 target_to_chase.global_position == navigation_agent.target_position:
 		on_hit_signal.emit()
