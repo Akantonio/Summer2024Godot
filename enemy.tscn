@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8babb11 (Saved enemy scene file)
 [gd_scene load_steps=4 format=3 uid="uid://cyfa7ypxguv82"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_q2vwf"]
@@ -10,7 +5,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d6315"]
 radius = 20.0
-<<<<<<< HEAD
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -24,33 +18,3 @@ shape = SubResource("CircleShape2D_d6315")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1
-=======
-[gd_scene load_steps=2 format=3 uid="uid://cyfa7ypxguv82"]
-=======
-[gd_scene format=3 uid="uid://cyfa7ypxguv82"]
->>>>>>> e45f5c3 (Added script for enemy scene)
-=======
->>>>>>> 8babb11 (Saved enemy scene file)
-
-[node name="Enemy" type="CharacterBody2D"]
-collision_layer = 2
-script = ExtResource("1_q2vwf")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_u52w1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_d6315")
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("RectangleShape2D_vkapv")
->>>>>>> dc48dbe (Created enemy scene)
-=======
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
->>>>>>> e45f5c3 (Added script for enemy scene)
-=======
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_postprocessing = 1
->>>>>>> b9241d2 (fixed bug when enemy reaches test_player)
