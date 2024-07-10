@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=3 format=3 uid="uid://dl27ni35hoeq6"]
 
 [ext_resource type="Texture2D" uid="uid://nf1rtonb8oo5" path="res://playerTemp (32x32).png" id="1_2xtk0"]
@@ -8,9 +9,19 @@ height = 28.0
 
 [node name="testPlayer" type="CharacterBody2D"]
 collision_layer = 2
+=======
+[gd_scene load_steps=2 format=3 uid="uid://dl27ni35hoeq6"]
+
+[ext_resource type="Texture2D" uid="uid://nf1rtonb8oo5" path="res://playerTemp (32x32).png" id="1_2xtk0"]
+
+[node name="testPlayer" type="CharacterBody2D"]
+>>>>>>> 2e14fdb (Added test player)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_2xtk0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+<<<<<<< HEAD
 shape = SubResource("CapsuleShape2D_ps3md")
+=======
+>>>>>>> 2e14fdb (Added test player)
