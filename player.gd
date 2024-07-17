@@ -11,6 +11,13 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var maxHealth = 5
 @onready var currentHealth: int = maxHealth
 
+func _process(_delta):
+	if Input.is_action_just_pressed("keyboard_attack"):
+		$Area2D/CollisionShape2D.disabled = false
+		#TODO: add animation for attacking
+	else:
+		$Area2D/CollisionShape2D.disabled = true
+
 func _physics_process(delta):
 	#animations
 	if (velocity.x > 1 || velocity.x < -1):
@@ -48,3 +55,8 @@ func _on_hurt_box_area_entered(area):
 		healthChanged.emit(currentHealth)
 		print_debug(currentHealth); 
 
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("Hit"):
+		body.take_damage()
+	else:
+		pass
