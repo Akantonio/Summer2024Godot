@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dagdgdnxrw5ei"]
+[gd_scene load_steps=18 format=3 uid="uid://dagdgdnxrw5ei"]
 
 [ext_resource type="Texture2D" uid="uid://xxyv0skymi54" path="res://Free/Terrain/Terrain (16x16).png" id="1_psgif"]
 [ext_resource type="Texture2D" uid="uid://bvpp1ldsmqvmx" path="res://Free/Items/Fruits/Apple.png" id="2_1q0r1"]
+[ext_resource type="Script" path="res://Level Scripts/VanishingPlatform.gd" id="3_mixcf"]
+[ext_resource type="Texture2D" uid="uid://kdpg768cuoff" path="res://Free/Items/Boxes/Box1/Vanish.png" id="4_ndgsv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2njb3"]
 texture = ExtResource("1_psgif")
@@ -914,6 +916,64 @@ _data = {
 "RESET": SubResource("Animation_yj2kb")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khy8r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqkqf"]
+
+[sub_resource type="Animation" id="Animation_25sb2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VanishingPlatform/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_tyxl3"]
+resource_name = "destroy"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VanishingPlatform/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_on6lc"]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VanishingPlatform/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_64w4h"]
+_data = {
+"RESET": SubResource("Animation_25sb2"),
+"destroy": SubResource("Animation_tyxl3"),
+"idle": SubResource("Animation_on6lc")
+}
+
 [node name="TestLevel" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -937,3 +997,26 @@ libraries = {
 "": SubResource("AnimationLibrary_4bgkg")
 }
 autoplay = "AppleIdle"
+
+[node name="VanishingPlatform" type="Area2D" parent="."]
+position = Vector2(528, 140)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("3_mixcf")
+
+[node name="Sprite2D" type="Sprite2D" parent="VanishingPlatform"]
+texture = ExtResource("4_ndgsv")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VanishingPlatform"]
+shape = SubResource("RectangleShape2D_khy8r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="VanishingPlatform"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VanishingPlatform/StaticBody2D"]
+shape = SubResource("RectangleShape2D_eqkqf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VanishingPlatform"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_64w4h")
+}
