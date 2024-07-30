@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyfa7ypxguv82"]
 
-[ext_resource type="Script" path="res://enemy.gd" id="1_q2vwf"]
+[ext_resource type="Script" path="res://Aenemy.gd" id="1_q2vwf"]
 [ext_resource type="Texture2D" uid="uid://cb6012eu2tmaa" path="res://enemyResources/saw.png" id="2_u52w1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d6315"]
 radius = 20.0
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Aenemy" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_q2vwf")
 

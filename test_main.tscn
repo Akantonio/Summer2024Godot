@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://3d0q58yc1rr7"]
 
-[ext_resource type="PackedScene" uid="uid://cyfa7ypxguv82" path="res://enemy.tscn" id="1_tiilm"]
+[ext_resource type="PackedScene" uid="uid://cyfa7ypxguv82" path="res://Aenemy.tscn" id="1_tiilm"]
 [ext_resource type="PackedScene" uid="uid://dl27ni35hoeq6" path="res://test_player.tscn" id="2_ojvaf"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wbe2d"]
@@ -14,7 +14,7 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_wbe2d")
 
-[node name="Enemy" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("1_tiilm")]
+[node name="Aenemy" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("1_tiilm")]
 position = Vector2(74, 79)
 target_to_chase = NodePath("../testPlayer")
 
