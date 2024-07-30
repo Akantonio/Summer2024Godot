@@ -2,8 +2,13 @@ extends CharacterBody2D
 
 signal healthChanged
 
-const SPEED = 300.0
+const NORMALSPEED = 300.0
 const JUMP_VELOCITY = -400.0
+
+const dashspeed = 3000
+const dashlength = .1
+
+@onready var dash = $Dash
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -25,6 +30,17 @@ func _physics_process(delta):
 	else:
 		$Sprite2D.animation = "idle"
 	
+	if Input.is_action_just_pressed("keyboard_dash"):
+		dash.start_dash(dashlength)
+	
+	var speed
+	#Change speed if we are dashing
+	if dash.is_dashing():
+		speed = dashspeed
+	else:
+		speed = NORMALSPEED
+	
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -38,9 +54,9 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("keyboard_left", "keyboard_right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
 
 	move_and_slide()
 	var isLeft = velocity.x < 0
