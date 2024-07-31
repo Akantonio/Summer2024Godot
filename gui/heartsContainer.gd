@@ -7,11 +7,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
-func setMaxHearts(max: int):
-	for i in range(max):
+func setMaxHearts(maxhearts: int):
+	for i in range(maxhearts):
 		var heart = HeartGuiClass.instantiate()
 		add_child(heart)
 func updateHearts(currentHealth: int):
