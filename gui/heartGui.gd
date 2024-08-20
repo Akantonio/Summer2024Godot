@@ -12,5 +12,7 @@ func _process(_delta):
 	pass
 
 func update(whole: bool):
-	if whole: sprite.frame = 4
-	else: sprite.frame = 0
+	if whole: 
+		sprite.frame = 4
+	else: 
+		sprite.frame = 0

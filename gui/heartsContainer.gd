@@ -10,10 +10,12 @@ func _ready():
 func _process(_delta):
 	pass
 
+#Will not get rid of other hearts created through setMaxHearts
 func setMaxHearts(maxhearts: int):
 	for i in range(maxhearts):
 		var heart = HeartGuiClass.instantiate()
 		add_child(heart)
+
 func updateHearts(currentHealth: int):
 	var hearts = get_children()
 	

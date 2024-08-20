@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://ceacw8luev2lf"]
 
-[ext_resource type="Script" path="res://test/test.gd" id="1_6txnl"]
-[ext_resource type="PackedScene" uid="uid://bvwiuai8lgww0" path="res://player/player.tscn" id="1_kc4k1"]
-[ext_resource type="PackedScene" uid="uid://cqo7vjp5msa2u" path="res://gui/heartsContainer.tscn" id="3_4hstq"]
+[ext_resource type="Script" path="res://test/example_level.gd" id="1_0qijm"]
+[ext_resource type="PackedScene" uid="uid://bvwiuai8lgww0" path="res://player/player.tscn" id="2_v3nvw"]
+[ext_resource type="PackedScene" uid="uid://cqo7vjp5msa2u" path="res://gui/heartsContainer.tscn" id="3_ux6pv"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fjppi"]
 size = Vector2(1000, 100)
@@ -12,15 +12,14 @@ orientation = 2
 size = Vector2(1011, 100)
 
 [node name="Test" type="Node2D"]
-script = ExtResource("1_6txnl")
+script = ExtResource("1_0qijm")
 
-[node name="Player" parent="." instance=ExtResource("1_kc4k1")]
+[node name="Player" parent="." instance=ExtResource("2_v3nvw")]
 position = Vector2(1067, 709)
-maxHealth = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("3_4hstq")]
+[node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("3_ux6pv")]
 
 [node name="Platform" type="StaticBody2D" parent="."]
 position = Vector2(1064, 847)
