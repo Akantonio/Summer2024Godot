@@ -27,7 +27,6 @@ func _process(_delta):
 		$Area2D/CollisionShape2D.disabled = true
 
 func _physics_process(delta):	
-	move_and_slide()
 	if Input.is_action_just_pressed("keyboard_dash"):
 		dash.start_dash(dashlength)
 		#TODO add dash animation
@@ -41,15 +40,19 @@ func _physics_process(delta):
 	
 		#Run and idle animations
 	if (velocity.x > 1 || velocity.x < -1):
-		if not $Sprite2D.animation == "run" :
-			$Sprite2D.animation = "run"
+		#if not $Sprite2D.animation == "run" :
+			#$Sprite2D.animation = "run"
+			#$Sprite2D.animation.play()
+			$Sprite2D.play("run")
 	else:
-		$Sprite2D.animation = "idle"
+		#if not $Sprite2D.animation == "idle" :
+			#$Sprite2D.animation = "idle"
+			$Sprite2D.play("idle")
 
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		if velocity.y < 1:
+		if velocity.y < 0:
 			$Sprite2D.animation = "jump"
 		else:
 			$Sprite2D.animation = "fall"
@@ -66,8 +69,6 @@ func _physics_process(delta):
 		velocity.x = direction * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
-
-	
 	
 	#check if the player has moved in a direction and update it accordingly
 	
@@ -75,6 +76,7 @@ func _physics_process(delta):
 		isLeft = velocity.x < 0
 
 	$Sprite2D.flip_h = isLeft
+	move_and_slide()
 
 func _on_hurt_box_area_entered(area):
 	if area.name == "hitBox":
