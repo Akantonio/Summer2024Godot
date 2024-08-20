@@ -24,6 +24,10 @@ window/size/viewport_height=1080
 
 project/assembly_name="Summer2024"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 keyboard_left={

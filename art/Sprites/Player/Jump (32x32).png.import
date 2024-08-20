@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl83lp7fi8qhm"
-path="res://.godot/imported/heart.png-4b30dd9ad5425c27cf042c56d8f3c3c2.ctex"
+uid="uid://b3ihkm2tc2hy4"
+path="res://.godot/imported/Jump (32x32).png-ca0f699efc4a89a25fa3059fc2341259.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/gui/heart.png"
-dest_files=["res://.godot/imported/heart.png-4b30dd9ad5425c27cf042c56d8f3c3c2.ctex"]
+source_file="res://art/Sprites/Player/Jump (32x32).png"
+dest_files=["res://.godot/imported/Jump (32x32).png-ca0f699efc4a89a25fa3059fc2341259.ctex"]
 
 [params]
 

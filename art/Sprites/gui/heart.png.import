@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmqkgooemhjba"
-path="res://.godot/imported/Run (32x32).png-ae9f292123e99d89a52168a98033c628.ctex"
+uid="uid://cl83lp7fi8qhm"
+path="res://.godot/imported/heart.png-3c456b5cddb9fa0924d97a995319210e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Run (32x32).png"
-dest_files=["res://.godot/imported/Run (32x32).png-ae9f292123e99d89a52168a98033c628.ctex"]
+source_file="res://art/Sprites/gui/heart.png"
+dest_files=["res://.godot/imported/heart.png-3c456b5cddb9fa0924d97a995319210e.ctex"]
 
 [params]
 

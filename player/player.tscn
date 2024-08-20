@@ -1,10 +1,10 @@
 [gd_scene load_steps=33 format=3 uid="uid://bvwiuai8lgww0"]
 
-[ext_resource type="Texture2D" uid="uid://b3ihkm2tc2hy4" path="res://Sprites/Player/Jump (32x32).png" id="1_et3eg"]
+[ext_resource type="Texture2D" uid="uid://b3ihkm2tc2hy4" path="res://art/Sprites/Player/Jump (32x32).png" id="1_et3eg"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_ty6et"]
-[ext_resource type="Texture2D" uid="uid://ceaiulxrxpjps" path="res://Sprites/Player/Fall (32x32).png" id="2_1cqba"]
-[ext_resource type="Texture2D" uid="uid://c48dnjc512osv" path="res://Sprites/Player/Idle (32x32).png" id="2_q7ocd"]
-[ext_resource type="Texture2D" uid="uid://dmqkgooemhjba" path="res://Sprites/Player/Run (32x32).png" id="5_4owxi"]
+[ext_resource type="Texture2D" uid="uid://ceaiulxrxpjps" path="res://art/Sprites/Player/Fall (32x32).png" id="2_1cqba"]
+[ext_resource type="Texture2D" uid="uid://c48dnjc512osv" path="res://art/Sprites/Player/Idle (32x32).png" id="2_q7ocd"]
+[ext_resource type="Texture2D" uid="uid://dmqkgooemhjba" path="res://art/Sprites/Player/Run (32x32).png" id="5_4owxi"]
 [ext_resource type="PackedScene" uid="uid://bxor3ncel2t06" path="res://player/dash.tscn" id="6_wykkw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p6os5"]
@@ -210,8 +210,7 @@ script = ExtResource("1_ty6et")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_xndvy")
-animation = &"fall"
-frame_progress = 0.426613
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
