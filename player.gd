@@ -63,6 +63,7 @@ func _physics_process(delta):
 	$Sprite2D.flip_h = isLeft
 
 func _on_hurt_box_area_entered(area):
+	print_debug("HI")
 	if area.name == "hitBox":
 		currentHealth -= 1
 		if currentHealth == 0:
